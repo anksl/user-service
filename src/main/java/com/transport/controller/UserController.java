@@ -3,7 +3,6 @@ package com.transport.controller;
 import com.transport.api.dto.UserDto;
 import com.transport.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,13 +27,13 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDto> findById(@PathVariable(value = "id") Long id) {
-        return ResponseEntity.ok(userService.findById(id));
+    public UserDto findById(@PathVariable(value = "id") Long id) {
+        return userService.findById(id);
     }
 
     @GetMapping
-    public ResponseEntity<UserDto> findByName(@RequestParam(value = "name") String name) {
-        return ResponseEntity.ok(userService.findByName(name));
+    public UserDto findByName(@RequestParam(value = "name") String name) {
+        return userService.findByName(name);
     }
 
     @GetMapping("/current")
@@ -43,13 +42,12 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UserDto> updateUser(@PathVariable(value = "id") Long id, @Validated @RequestBody UserDto newUser) {
-        return ResponseEntity.ok(userService.updateUser(id, newUser));
+    public UserDto updateUser(@PathVariable(value = "id") Long id, @Validated @RequestBody UserDto newUser) {
+        return userService.updateUser(id, newUser);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable(value = "id") Long id) {
+    public void deleteUser(@PathVariable(value = "id") Long id) {
         userService.deleteUser(id);
-        return ResponseEntity.noContent().build();
     }
 }
