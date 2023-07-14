@@ -1,7 +1,6 @@
 package com.transport.controller;
 
 import com.transport.api.dto.AuthenticationDto;
-import com.transport.api.dto.UserDto;
 import com.transport.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

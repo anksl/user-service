@@ -59,6 +59,11 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <version>${spring-cloud-openfeign.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.transport</groupId>
+            <artifactId>transport-project-security-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
         <dependency>
             <groupId>org.springframework.security</groupId>
